@@ -25,11 +25,11 @@ export function AboutSection() {
                 Software Developer &amp; Design Engineer
               </p>
               <ul className="max-w-[46rem] list-disc space-y-0.5 pl-5 text-[0.88rem] leading-5.5 text-muted-foreground md:space-y-1 md:text-[0.96rem] md:leading-6.5">
-                <li>Builds software with a strong interest in AI-powered products that can improve everyday human life.</li>
-                <li>Focuses on creating practical, user-friendly applications instead of adding AI for the sake of it.</li>
-                <li>Works mainly with React, Next.js, TypeScript, and modern web tooling.</li>
-                <li>Sees design as a core part of the product, not just a finishing layer.</li>
-                <li>Enjoys blending engineering, interface design, and product thinking into one experience.</li>
+                <li>I build AI-integrated apps with the intention of making them genuinely useful for people.</li>
+                <li>I care more about practical products than adding AI just for hype.</li>
+                <li>I mainly work with React, Next.js, TypeScript, and modern web tools.</li>
+                <li>Design is one of my core interests, especially clean and simple interfaces.</li>
+                <li>I like combining engineering, product thinking, and design in one workflow.</li>
               </ul>
             </div>
             <div className="flex flex-wrap gap-2.5">
