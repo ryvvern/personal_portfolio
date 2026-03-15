@@ -1,0 +1,82 @@
+export const siteConfig = {
+  name: "Ayush Thakur — Software Developer & Design Engineer",
+  description:
+    "A minimal personal portfolio for Ayush Thakur with a clean developer-focused design system.",
+  url: "https://ayushthakur.dev",
+  email: "ayushth199@gmail.com",
+  navigation: [
+    { label: "About", href: "/#about" },
+    { label: "Stack", href: "/#stack" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Contact Me", href: "/#contact" },
+  ],
+  aboutHighlights: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind",
+    "UI Engineering",
+  ],
+  primarySkills: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "UI Engineering",
+    "Animation",
+    "API Integration",
+    "Design Systems",
+  ],
+  stack: [
+    "React",
+    "Cursor",
+    "Claude",
+    "ChatGPT",
+    "Figma",
+    "TypeScript",
+    "Git",
+    "JavaScript",
+    "Python",
+    "Next.js",
+  ],
+  projects: [
+    {
+      title: "Prism OS",
+      category: "AI Product Dashboard",
+      year: "2026",
+      description:
+        "A sleek operational dashboard for AI teams with layered analytics, command palettes, and polished empty/loading states.",
+      tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+      image: "/projects/prism-os.svg",
+      liveHref: "https://example.com/prism-os",
+      githubHref: "https://github.com/ayushthakur/prism-os",
+    },
+    {
+      title: "Northstar Commerce",
+      category: "Headless Storefront",
+      year: "2025",
+      description:
+        "A conversion-focused ecommerce experience with editorial product storytelling, modular blocks, and responsive merchandising.",
+      tech: ["React", "Shopify", "Tailwind", "Contentful"],
+      image: "/projects/northstar-commerce.svg",
+      liveHref: "https://example.com/northstar-commerce",
+      githubHref: "https://github.com/ayushthakur/northstar-commerce",
+    },
+    {
+      title: "MotionKit",
+      category: "Component Library",
+      year: "2025",
+      description:
+        "A design engineering playground for production-ready UI primitives, hover treatments, reveal patterns, and motion tokens.",
+      tech: ["Next.js", "shadcn/ui", "Framer Motion", "MDX"],
+      image: "/projects/motion-kit.svg",
+      liveHref: "https://example.com/motion-kit",
+      githubHref: "https://github.com/ayushthakur/motion-kit",
+    },
+  ],
+  socials: [
+    { label: "GitHub", href: "https://github.com/ryvvern" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/ayush--thakur" },
+    { label: "Twitter", href: "https://x.com/ryvvern_x" },
+  ],
+} as const;

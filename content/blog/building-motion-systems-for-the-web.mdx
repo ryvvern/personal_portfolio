@@ -1,0 +1,44 @@
+---
+title: "Building Motion Systems For The Web"
+description: "A lightweight approach to animation tokens, transitions, and reusable interaction patterns."
+date: "2026-01-24"
+readTime: "5 min read"
+tags:
+  - Motion
+  - Frontend
+  - Framer Motion
+---
+
+Motion systems become useful when they stop being one-off effects and start acting like product infrastructure.
+
+Instead of inventing new easing curves and durations for every screen, I prefer a small set of reusable decisions:
+
+## A short motion vocabulary
+
+I usually start with just a few patterns:
+
+- `fade-up` for section reveals
+- `scale-soft` for hover emphasis
+- `slide-in` for contextual panels
+- `pulse` for loading feedback
+
+That is often enough for an entire product.
+
+## Timing matters more than complexity
+
+Simple transitions with good timing feel more refined than complex choreography with no structure. My default bias is toward motion that is:
+
+- fast enough to keep the interface responsive
+- soft enough to avoid feeling abrupt
+- consistent enough to become familiar
+
+## Build motion into components
+
+If a card always lifts on hover, or a button always nudges its icon forward, that behavior belongs inside the component API instead of being reimplemented every time.
+
+This has two benefits:
+
+1. Engineers move faster.
+2. The product feels more unified.
+
+For teams, motion should be treated like typography or color: a shared system, not a special effect.
