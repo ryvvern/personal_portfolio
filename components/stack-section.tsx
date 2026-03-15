@@ -113,7 +113,7 @@ export function StackSection() {
       <Reveal>
         <SectionHeading
           eyebrow="Stack"
-          title="Tools I use to design, build, and ship."
+          title="Tools I use to design and build."
           description="A focused set of tools for frontend development, design work, and AI-assisted product building."
         />
       </Reveal>
