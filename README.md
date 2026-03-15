@@ -1,12 +1,14 @@
 # Portfolio
 
-Personal portfolio built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
+This is my personal portfolio site.
+
+Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
 
 ## Live Site
 
 [https://ayush-thakur-21.vercel.app/](https://ayush-thakur-21.vercel.app/)
 
-## Stack
+## Tech
 
 - Next.js
 - TypeScript
@@ -14,7 +16,7 @@ Personal portfolio built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and 
 - shadcn/ui
 - Framer Motion
 
-## Run Locally
+## Local Development
 
 ```bash
 npm install
@@ -23,6 +25,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Repository
+## GitHub
 
 [https://github.com/ryvvern/personal_portfolio](https://github.com/ryvvern/personal_portfolio)
