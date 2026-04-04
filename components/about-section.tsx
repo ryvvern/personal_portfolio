@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import portraitImage from "@/app/AT.png";
 import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/lib/button-styles";
@@ -11,8 +12,8 @@ import { cn } from "@/lib/utils";
 export function AboutSection() {
   return (
     <section id="about" className="container-shell pb-4 pt-24 md:pb-6 md:pt-28">
-      <div className="flex flex-col gap-6 lg:mx-auto lg:w-fit lg:flex-row lg:items-start lg:gap-4 xl:gap-5">
-        <Reveal delay={0.05} className="lg:mt-7 lg:max-w-[760px]">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-10">
+        <Reveal delay={0.05} className="max-w-3xl lg:max-w-[760px]">
           <div className="space-y-5">
             <div className="space-y-3">
               <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary">
@@ -66,12 +67,15 @@ export function AboutSection() {
             </div>
           </div>
         </Reveal>
-        <Reveal delay={0.1} className="mx-auto w-full max-w-[280px] lg:mx-0 lg:shrink-0">
+        <Reveal
+          delay={0.1}
+          className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]"
+        >
           <div className="glass-panel w-full overflow-hidden rounded-[1.35rem] p-3">
             <div className="overflow-hidden rounded-[1.1rem] border border-border bg-background">
               <Image
-                src="/profile-portrait.svg"
-                alt="Illustrated portrait of Ayush Thakur"
+                src={portraitImage}
+                alt="Portrait of Ayush Thakur"
                 width={720}
                 height={920}
                 className="h-full w-full object-cover"

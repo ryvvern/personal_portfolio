@@ -41,15 +41,15 @@ export const siteConfig = {
   ],
   projects: [
     {
-      title: "Prism OS",
-      category: "AI Product Dashboard",
+      title: "World Lore",
+      category: "Interactive Country Atlas",
       year: "2026",
       description:
-        "A sleek operational dashboard for AI teams with layered analytics, command palettes, and polished empty/loading states.",
-      tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-      image: "/projects/prism-os.svg",
-      liveHref: "https://example.com/prism-os",
-      githubHref: "https://github.com/ayushthakur/prism-os",
+        "A map-based history app where clicking a country reveals summaries, timelines, facts, and comparisons, all powered by structured JSON data with no backend.",
+      tech: ["React", "TypeScript", "Tailwind", "MapLibre GL"],
+      image: "/projects/world-lore.svg",
+      liveHref: "https://project-worldlore.vercel.app",
+      githubHref: "https://github.com/ryvvern/project_worldlore",
     },
     {
       title: "Northstar Commerce",
