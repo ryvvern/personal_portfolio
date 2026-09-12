@@ -7,7 +7,10 @@ export function SiteHeader() {
   return (
     <header className="border-b border-border">
       <div className="container-shell flex items-center justify-between py-4">
-        <Link href="/" className="text-body font-medium">
+        <Link
+          href="/"
+          className="text-body font-medium transition-colors duration-150 hover:text-muted-foreground"
+        >
           Ayush Thakur
         </Link>
         <div className="flex items-center gap-6">
@@ -16,7 +19,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-label text-muted-foreground transition-colors hover:text-foreground"
+                className="text-label text-muted-foreground transition-colors duration-150 hover:text-foreground"
               >
                 {item.label}
               </Link>

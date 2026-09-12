@@ -35,7 +35,7 @@ export function ContactSection() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors duration-150 hover:text-foreground"
               >
                 <Icon className="size-4" />
                 {item.label}

@@ -45,7 +45,7 @@ export function ProjectsSection() {
                 href={project.liveHref}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors duration-150 hover:text-foreground"
               >
                 Live site
                 <ArrowUpRight className="size-4" />
@@ -54,7 +54,7 @@ export function ProjectsSection() {
                 href={project.githubHref}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors duration-150 hover:text-foreground"
               >
                 GitHub
                 <Github className="size-4" />
