@@ -15,7 +15,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="container-shell section-space">
       <SectionHeading title="Contact" />
-      <div className="mt-8">
+      <div>
         <Link
           href={`mailto:${siteConfig.email}`}
           className="text-body hover:underline"

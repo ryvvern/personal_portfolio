@@ -144,12 +144,6 @@
     padding-block: 2rem;
   }
 
-  @media (min-width: 48rem) {
-    .section-space {
-      padding-block: 2.5rem;
-    }
-  }
-
   .glass-panel {
     background: transparent;
     border: 1px solid var(--border);
