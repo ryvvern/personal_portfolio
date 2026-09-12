@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
 
+import { PageFrame } from "@/components/page-frame";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -66,6 +67,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <PageFrame />
           <div className="relative min-h-screen overflow-x-hidden">
             <SiteHeader />
             {children}

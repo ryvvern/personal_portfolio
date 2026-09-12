@@ -174,6 +174,16 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .hatched {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--border) 0px,
+      var(--border) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+  }
 }
 
 @layer utilities {
