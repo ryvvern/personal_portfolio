@@ -1,67 +1,51 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { siteConfig } from "@/lib/site-config";
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="container-shell section-space border-t border-border">
       <SectionHeading eyebrow="Projects" />
-      <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-        {siteConfig.projects.map((project) => (
-          <Card key={project.title} className="glass-panel group h-full bg-transparent ring-0 py-0">
-            <div className="overflow-hidden border-b border-border">
-              <Image
-                src={project.image}
-                alt={`${project.title} project preview`}
-                width={900}
-                height={680}
-                className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+      <div className="mt-10">
+        {siteConfig.projects.map((project, index) => (
+          <div
+            key={project.title}
+            className={
+              index === 0
+                ? "py-6"
+                : "border-t border-border py-6"
+            }
+          >
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-body font-medium">{project.title}</p>
+              <p className="text-label text-muted-foreground">{project.year}</p>
             </div>
-            <CardHeader className="px-5 py-5">
-              <div className="flex items-center justify-between gap-3">
-                <p className="font-mono text-label uppercase tracking-[0.22em] text-muted-foreground">
-                  {project.year}
-                </p>
-                <p className="text-label text-muted-foreground">{project.category}</p>
-              </div>
-              <CardTitle className="text-heading tracking-tight">
-                {project.title}
-              </CardTitle>
-              <p className="text-supporting leading-6 text-muted-foreground">
-                {project.description}
-              </p>
-            </CardHeader>
-            <CardContent className="px-5 pb-5">
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((item) => (
-                  <Badge
-                    key={item}
-                    variant="outline"
-                    className="rounded-full border-border px-2.5 py-1 text-label text-muted-foreground"
-                  >
-                    {item}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter className="mt-auto justify-between gap-3 border-t border-border bg-transparent px-5 py-4">
+            <p className="mt-1 text-label text-muted-foreground">
+              {project.category}
+            </p>
+            <p className="mt-3 text-supporting text-muted-foreground">
+              {project.description}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.tech.map((item) => (
+                <Badge
+                  key={item}
+                  variant="outline"
+                  className="rounded-full border-border px-2.5 py-1 text-label text-muted-foreground"
+                >
+                  {item}
+                </Badge>
+              ))}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-4">
               <Link
                 href={project.liveHref}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors hover:text-foreground"
               >
                 Live site
                 <ArrowUpRight className="size-4" />
@@ -70,13 +54,13 @@ export function ProjectsSection() {
                 href={project.githubHref}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-label text-muted-foreground transition-colors hover:text-foreground"
               >
                 GitHub
                 <Github className="size-4" />
               </Link>
-            </CardFooter>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
     </section>
