@@ -9,14 +9,14 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="container-shell section-space">
       <SectionHeading title="Projects" count={siteConfig.projects.length} />
-      <div className="mt-10">
+      <div className="-mx-6 mt-10 border-t border-border">
         {siteConfig.projects.map((project, index) => (
           <div
             key={project.title}
             className={
               index === 0
-                ? "py-6"
-                : "border-t border-border py-6"
+                ? "px-6 py-6"
+                : "border-t border-border px-6 py-6"
             }
           >
             <div className="flex items-center justify-between gap-3">
@@ -65,6 +65,7 @@ export function ProjectsSection() {
             </div>
           </div>
         ))}
+        <div className="border-t border-border" />
       </div>
     </section>
   );

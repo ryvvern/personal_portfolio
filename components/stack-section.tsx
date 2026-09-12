@@ -104,37 +104,44 @@ export function StackSection() {
   return (
     <section id="stack" className="container-shell section-space">
       <SectionHeading title="Stack" />
-      <div className="mt-8">
-        {siteConfig.stack.map((group, index) => (
+      <div className="-mx-6 mt-8 border-t border-border">
+        <div className="relative">
           <div
-            key={group.group}
-            className={
-              index === 0
-                ? "flex flex-col gap-2 py-4 md:flex-row md:items-center"
-                : "flex flex-col gap-2 border-t border-border py-4 md:flex-row md:items-center"
-            }
-          >
-            <div className="flex items-center gap-2 md:w-40 md:shrink-0 md:border-r md:border-border">
-              <span className="font-mono text-label text-muted-foreground">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="font-mono text-label text-foreground">
-                {group.group}
-              </span>
+            className="pointer-events-none absolute inset-y-0 hidden border-r border-border md:block"
+            style={{ left: "calc(1.5rem + 10rem)" }}
+          />
+          {siteConfig.stack.map((group, index) => (
+            <div
+              key={group.group}
+              className={
+                index === 0
+                  ? "flex flex-col gap-2 px-6 py-4 md:flex-row md:items-center"
+                  : "flex flex-col gap-2 border-t border-border px-6 py-4 md:flex-row md:items-center"
+              }
+            >
+              <div className="flex items-center gap-2 md:w-40 md:shrink-0">
+                <span className="font-mono text-label text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-mono text-label text-foreground">
+                  {group.group}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 md:pl-4">
+                {group.items.map((label) => (
+                  <div
+                    key={label}
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1"
+                  >
+                    <StackIcon item={stackIcons[label]} />
+                    <span className="font-mono text-body text-foreground">{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap items-center gap-2 md:pl-4">
-              {group.items.map((label) => (
-                <div
-                  key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1"
-                >
-                  <StackIcon item={stackIcons[label]} />
-                  <span className="font-mono text-body text-foreground">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className="border-t border-border" />
       </div>
     </section>
   );
