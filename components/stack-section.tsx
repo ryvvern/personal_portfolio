@@ -114,19 +114,22 @@ export function StackSection() {
                 : "flex flex-col gap-2 border-t border-border py-4 md:flex-row md:items-center"
             }
           >
-            <div className="flex items-center gap-2 md:w-40 md:shrink-0">
-              <span className="text-label text-muted-foreground">
+            <div className="flex items-center gap-2 md:w-40 md:shrink-0 md:border-r md:border-border">
+              <span className="font-mono text-label text-muted-foreground">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="text-label text-muted-foreground">
+              <span className="font-mono text-label text-foreground">
                 {group.group}
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2 md:pl-4">
               {group.items.map((label) => (
-                <div key={label} className="flex items-center gap-2">
+                <div
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1"
+                >
                   <StackIcon item={stackIcons[label]} />
-                  <span className="text-body">{label}</span>
+                  <span className="font-mono text-body text-foreground">{label}</span>
                 </div>
               ))}
             </div>

@@ -12,7 +12,7 @@ export function AboutSection() {
       <h1 className="text-display font-semibold tracking-[-0.055em] text-balance">
         Ayush Thakur
       </h1>
-      <p className="mt-1 text-body text-muted-foreground">
+      <p className="mt-1 font-mono text-body text-muted-foreground">
         Software Developer
       </p>
       <p className="mt-6 text-body text-foreground">

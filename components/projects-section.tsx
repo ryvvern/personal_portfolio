@@ -21,9 +21,9 @@ export function ProjectsSection() {
           >
             <div className="flex items-center justify-between gap-3">
               <p className="text-body font-medium">{project.title}</p>
-              <p className="text-label text-muted-foreground">{project.year}</p>
+              <p className="font-mono text-label text-muted-foreground">{project.year}</p>
             </div>
-            <p className="mt-1 text-label text-muted-foreground">
+            <p className="mt-1 font-mono text-label text-muted-foreground">
               {project.category}
             </p>
             <p className="mt-3 text-supporting text-muted-foreground">
