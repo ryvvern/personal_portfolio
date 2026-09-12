@@ -26,14 +26,14 @@ export function ContactSection() {
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal delay={0.05}>
             <div className="space-y-6">
-              <div className="rounded-[1.4rem] border border-border/80 bg-background p-5">
-                <p className="font-mono text-label uppercase tracking-[0.24em] text-primary">
+              <div className="rounded-[1.4rem] border border-border bg-background p-5">
+                <p className="font-mono text-label uppercase tracking-[0.24em] text-muted-foreground">
                   Reach out
                 </p>
                 <div className="mt-4 space-y-3">
                   <Link
                     href={`mailto:${siteConfig.email}`}
-                    className="block text-heading font-semibold tracking-tight transition-colors hover:text-primary"
+                    className="block text-heading font-semibold tracking-tight transition-colors hover:text-foreground"
                   >
                     {siteConfig.email}
                   </Link>
@@ -53,7 +53,7 @@ export function ContactSection() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center justify-between rounded-[1.25rem] border border-border/80 bg-background px-4 py-3.5 transition-transform duration-300 hover:-translate-y-0.5"
+                      className="group flex items-center justify-between rounded-[1.25rem] border border-border bg-background px-4 py-3.5 transition-transform duration-300 hover:-translate-y-0.5"
                     >
                       <span className="flex items-center gap-3">
                         <Icon className="size-4.5" />
@@ -67,7 +67,7 @@ export function ContactSection() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="rounded-[1.4rem] border border-border/80 bg-background p-5 md:p-6">
+            <div className="rounded-[1.4rem] border border-border bg-background p-5 md:p-6">
               <ContactForm />
             </div>
           </Reveal>

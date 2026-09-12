@@ -35,7 +35,7 @@ export function SiteHeader() {
               href="/#contact"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "hidden rounded-full border-border/80 bg-background px-4 text-label font-medium sm:inline-flex"
+                "hidden rounded-full border-border bg-background px-4 font-medium sm:inline-flex"
               )}
             >
               Contact

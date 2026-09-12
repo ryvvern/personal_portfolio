@@ -27,8 +27,8 @@ export function ProjectsSection() {
       <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
         {siteConfig.projects.map((project, index) => (
           <Reveal key={project.title} delay={index * 0.08}>
-            <Card className="glass-panel group h-full rounded-[1.5rem] border-border/80 bg-card py-0">
-              <div className="overflow-hidden rounded-t-[1.5rem] border-b border-border/80 bg-background">
+            <Card className="glass-panel group h-full rounded-[1.5rem] border-border bg-card py-0">
+              <div className="overflow-hidden rounded-t-[1.5rem] border-b border-border bg-background">
                 <Image
                   src={project.image}
                   alt={`${project.title} project preview`}
@@ -39,7 +39,7 @@ export function ProjectsSection() {
               </div>
               <CardHeader className="px-5 py-5">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="font-mono text-label uppercase tracking-[0.22em] text-primary">
+                  <p className="font-mono text-label uppercase tracking-[0.22em] text-muted-foreground">
                     {project.year}
                   </p>
                   <p className="text-label text-muted-foreground">{project.category}</p>
@@ -57,19 +57,19 @@ export function ProjectsSection() {
                     <Badge
                       key={item}
                       variant="outline"
-                      className="rounded-full border-border/80 px-2.5 py-1 text-label"
+                      className="rounded-full border-border px-2.5 py-1 text-label text-muted-foreground"
                     >
                       {item}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="mt-auto justify-between gap-3 border-t border-border/80 bg-muted/20 px-5 py-4">
+              <CardFooter className="mt-auto justify-between gap-3 border-t border-border bg-muted px-5 py-4">
                 <Link
                   href={project.liveHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-foreground"
                 >
                   Live site
                   <ArrowUpRight className="size-4" />
@@ -78,7 +78,7 @@ export function ProjectsSection() {
                   href={project.githubHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 text-label font-medium transition-colors hover:text-foreground"
                 >
                   GitHub
                   <Github className="size-4" />
