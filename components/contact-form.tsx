@@ -77,7 +77,7 @@ export function ContactForm() {
         required
       />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-secondary leading-6 text-muted-foreground">
+        <p className="text-supporting leading-6 text-muted-foreground">
           The form opens your default mail client to send directly to{" "}
           <span className="text-foreground">{siteConfig.email}</span>.
         </p>

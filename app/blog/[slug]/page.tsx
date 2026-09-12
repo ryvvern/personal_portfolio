@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 
@@ -49,8 +48,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="container-shell section-space pt-32">
-      <Reveal>
-        <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-3xl">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -85,8 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <article className="prose prose-neutral mt-12 max-w-none dark:prose-invert">
             {post.content}
           </article>
-        </div>
-      </Reveal>
+      </div>
     </main>
   );
 }

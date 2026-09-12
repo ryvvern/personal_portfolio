@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import portraitImage from "@/app/AT.png";
-import { Reveal } from "@/components/reveal";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/lib/button-styles";
 import { siteConfig } from "@/lib/site-config";
@@ -13,7 +12,7 @@ export function AboutSection() {
   return (
     <section id="about" className="container-shell section-space">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-10">
-        <Reveal delay={0.05} className="max-w-3xl lg:max-w-[760px]">
+        <div className="max-w-3xl lg:max-w-[760px]">
           <div className="space-y-5">
             <div className="space-y-3">
               <p className="font-mono text-label uppercase tracking-[0.28em] text-muted-foreground">
@@ -22,7 +21,7 @@ export function AboutSection() {
               <h1 className="max-w-3xl text-display font-semibold tracking-[-0.055em] text-balance">
                 Ayush Thakur
               </h1>
-              <p className="max-w-2xl text-secondary text-foreground">
+              <p className="max-w-2xl text-supporting text-foreground">
                 Software Developer &amp; Design Engineer
               </p>
               <ul className="max-w-[46rem] list-disc space-y-0.5 pl-5 text-body leading-5.5 text-muted-foreground md:space-y-1 md:leading-6.5">
@@ -66,11 +65,8 @@ export function AboutSection() {
               </Link>
             </div>
           </div>
-        </Reveal>
-        <Reveal
-          delay={0.1}
-          className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]"
-        >
+        </div>
+        <div className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]">
           <div className="glass-panel w-full overflow-hidden p-3">
             <div className="overflow-hidden">
               <Image
@@ -91,7 +87,7 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

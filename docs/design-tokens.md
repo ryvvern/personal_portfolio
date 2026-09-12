@@ -11,10 +11,12 @@ Exactly five sizes, use the token utilities only:
 | `text-display` | 30px | the name in the hero, and nothing else on the site |
 | `text-heading` | 16px | section headings |
 | `text-body` | 14px | body copy, default |
-| `text-secondary` | 13px | supporting text, descriptions |
+| `text-supporting` | 13px | supporting text, descriptions |
 | `text-label` | 12px | labels, metadata, eyebrows |
 
 Banned: every `text-xs` / `text-sm` / `text-base` / `text-lg` / `text-xl` / `text-2xl` / `text-3xl` / `text-4xl` / `text-5xl` / `text-6xl` utility, and every arbitrary bracket text size such as `text-[0.95rem]`.
+
+Note: this token is named `text-supporting`, not `text-secondary` — Tailwind's built-in `--color-secondary` theme variable already claims the utility name `text-secondary` (as a text colour), so a same-named custom font-size token is silently dropped in favour of the built-in colour rule. Do not reintroduce `text-secondary` as a font-size utility name.
 
 ## Font weights
 

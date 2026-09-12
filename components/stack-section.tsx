@@ -13,7 +13,6 @@ import {
   siTypescript,
 } from "simple-icons";
 
-import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/lib/site-config";
 
@@ -110,14 +109,12 @@ function StackIcon({ item }: { item: StackItem }) {
 export function StackSection() {
   return (
     <section id="stack" className="container-shell section-space border-t border-border">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Stack"
-          title="Tools I use to design and build."
-          description="A focused set of tools for frontend development, design work, and AI-assisted product building."
-        />
-      </Reveal>
-      <Reveal delay={0.05} className="mt-8">
+      <SectionHeading
+        eyebrow="Stack"
+        title="Tools I use to design and build."
+        description="A focused set of tools for frontend development, design work, and AI-assisted product building."
+      />
+      <div className="mt-8">
         <div className="border border-border px-5 py-6 md:px-7">
           <div className="grid grid-cols-3 gap-x-6 gap-y-7 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
             {siteConfig.stack.map((label) => (
@@ -125,7 +122,7 @@ export function StackSection() {
             ))}
           </div>
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }

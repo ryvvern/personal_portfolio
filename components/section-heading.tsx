@@ -26,7 +26,7 @@ export function SectionHeading({
       <h2 className="text-heading font-semibold tracking-[-0.045em] text-balance">
         {title}
       </h2>
-      <p className="text-secondary leading-7 text-muted-foreground">
+      <p className="text-supporting leading-7 text-muted-foreground">
         {description}
       </p>
     </div>
