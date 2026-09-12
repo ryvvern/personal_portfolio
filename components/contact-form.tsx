@@ -56,7 +56,7 @@ export function ContactForm() {
         placeholder="Your name"
         value={form.name}
         onChange={(event) => updateField("name", event.target.value)}
-        className="h-12 rounded-2xl border-border bg-background px-4"
+        className="h-12 rounded-sm border-border bg-background px-4"
         required
       />
       <Input
@@ -65,7 +65,7 @@ export function ContactForm() {
         placeholder="Email address"
         value={form.email}
         onChange={(event) => updateField("email", event.target.value)}
-        className="h-12 rounded-2xl border-border bg-background px-4"
+        className="h-12 rounded-sm border-border bg-background px-4"
         required
       />
       <Textarea
@@ -73,14 +73,10 @@ export function ContactForm() {
         placeholder="Tell me a little about the product, timeline, or role..."
         value={form.message}
         onChange={(event) => updateField("message", event.target.value)}
-        className="min-h-36 rounded-2xl border-border bg-background px-4 py-3"
+        className="min-h-36 rounded-sm border-border bg-background px-4 py-3"
         required
       />
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-supporting leading-6 text-muted-foreground">
-          The form opens your default mail client to send directly to{" "}
-          <span className="text-foreground">{siteConfig.email}</span>.
-        </p>
+      <div className="mt-4">
         <Button
           type="submit"
           variant="outline"
