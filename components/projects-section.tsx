@@ -26,7 +26,10 @@ export function ProjectsSection() {
             <p className="mt-1 font-mono text-label text-muted-foreground">
               {project.category}
             </p>
-            <p className="mt-3 text-supporting text-muted-foreground">
+            <p
+              className="mt-3 text-supporting text-muted-foreground"
+              style={{ maxWidth: "var(--container-prose)" }}
+            >
               {project.description}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">

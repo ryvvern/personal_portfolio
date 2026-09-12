@@ -35,7 +35,9 @@ Banned: every half step (`p-2.5`, `gap-1.5`, `py-3.5`, etc), every arbitrary bra
 
 ## Container
 
-Max-width `var(--container-content)` (640px), centred, with 24px horizontal padding.
+Max-width `var(--container-content)` (1088px / 68rem), centred, with 24px horizontal padding.
+
+`var(--container-prose)` (704px / 44rem) is a separate, narrower measure used only to constrain long-form paragraphs (the hero intro and project descriptions) so they stay readable at the wider column width.
 
 ## Colour
 

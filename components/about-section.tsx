@@ -15,7 +15,10 @@ export function AboutSection() {
       <p className="mt-1 font-mono text-body text-muted-foreground">
         Software Developer
       </p>
-      <p className="mt-6 text-body text-foreground">
+      <p
+        className="mt-6 text-body text-foreground"
+        style={{ maxWidth: "var(--container-prose)" }}
+      >
         {siteConfig.intro}
       </p>
       <div className="mt-8 flex flex-wrap gap-2">

@@ -51,7 +51,8 @@
   --text-label--letter-spacing: 0.01em;
 
   /* Layout */
-  --container-content: 40rem;
+  --container-content: 68rem;
+  --container-prose: 44rem;
 
   /* Section rhythm */
   --spacing-section: 3rem;
