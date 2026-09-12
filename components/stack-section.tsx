@@ -103,7 +103,7 @@ function StackIcon({ item }: { item: StackItem }) {
 export function StackSection() {
   return (
     <section id="stack" className="container-shell section-space border-t border-border">
-      <SectionHeading eyebrow="Stack" />
+      <SectionHeading title="Stack" />
       <div className="mt-8">
         {siteConfig.stack.map((group, index) => (
           <div

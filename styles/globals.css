@@ -33,10 +33,13 @@
   --font-mono: var(--font-ibm-plex-mono);
   --font-display: var(--font-manrope);
 
-  /* Type scale — five sizes, no others permitted */
+  /* Type scale — six sizes, no others permitted */
   --text-display: 1.875rem;
   --text-display--line-height: 1.2;
   --text-display--letter-spacing: -0.02em;
+  --text-section: 1.375rem;
+  --text-section--line-height: 1.3;
+  --text-section--letter-spacing: -0.01em;
   --text-heading: 1rem;
   --text-heading--line-height: 1.4;
   --text-body: 0.875rem;

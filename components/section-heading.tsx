@@ -1,11 +1,15 @@
 type SectionHeadingProps = {
-  eyebrow: string;
+  title: string;
+  count?: number;
 };
 
-export function SectionHeading({ eyebrow }: SectionHeadingProps) {
+export function SectionHeading({ title, count }: SectionHeadingProps) {
   return (
-    <p className="text-label uppercase tracking-wide text-muted-foreground">
-      {eyebrow}
-    </p>
+    <h2 className="mb-6 text-section font-semibold text-foreground">
+      {title}
+      {count !== undefined && (
+        <sup className="text-label text-muted-foreground">{count}</sup>
+      )}
+    </h2>
   );
 }
