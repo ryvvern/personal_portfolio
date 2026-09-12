@@ -1,47 +1,28 @@
 import Link from "next/link";
 
 import { ThemeToggle } from "@/components/theme-toggle";
-import { buttonVariants } from "@/lib/button-styles";
 import { siteConfig } from "@/lib/site-config";
-import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="container-shell py-3">
-        <div className="glass-panel flex items-center justify-between rounded-full px-4 py-2.5">
-          <Link href="/#about" className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-label font-semibold text-background">
-              AT
-            </span>
-            <div className="hidden sm:block">
-              <p className="text-body font-semibold tracking-tight">Ayush Thakur</p>
-              <p className="text-label text-muted-foreground">Portfolio</p>
-            </div>
-          </Link>
-          <nav className="hidden items-center gap-5 md:flex">
+    <header className="border-b border-border">
+      <div className="container-shell flex items-center justify-between py-4">
+        <Link href="/" className="text-body font-medium">
+          Ayush Thakur
+        </Link>
+        <div className="flex items-center gap-6">
+          <nav className="flex items-center gap-4">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="animated-underline text-label text-muted-foreground transition-colors hover:text-foreground"
+                className="text-label text-muted-foreground transition-colors hover:text-foreground"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-2">
-            <Link
-              href="/#contact"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "hidden rounded-full border-border bg-background px-4 font-medium sm:inline-flex"
-              )}
-            >
-              Contact
-            </Link>
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
         </div>
       </div>
     </header>
