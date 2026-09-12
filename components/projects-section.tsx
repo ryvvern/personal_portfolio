@@ -16,7 +16,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="container-shell section-space">
+    <section id="projects" className="container-shell section-space border-t border-border">
       <Reveal>
         <SectionHeading
           eyebrow="Projects"
@@ -27,8 +27,8 @@ export function ProjectsSection() {
       <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
         {siteConfig.projects.map((project, index) => (
           <Reveal key={project.title} delay={index * 0.08}>
-            <Card className="glass-panel group h-full rounded-[1.5rem] border-border bg-card py-0">
-              <div className="overflow-hidden rounded-t-[1.5rem] border-b border-border bg-background">
+            <Card className="glass-panel group h-full bg-transparent ring-0 py-0">
+              <div className="overflow-hidden border-b border-border">
                 <Image
                   src={project.image}
                   alt={`${project.title} project preview`}
@@ -64,7 +64,7 @@ export function ProjectsSection() {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="mt-auto justify-between gap-3 border-t border-border bg-muted px-5 py-4">
+              <CardFooter className="mt-auto justify-between gap-3 border-t border-border bg-transparent px-5 py-4">
                 <Link
                   href={project.liveHref}
                   target="_blank"

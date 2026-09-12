@@ -14,7 +14,7 @@ const socialIcons = {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="container-shell section-space">
+    <section id="contact" className="container-shell section-space border-t border-border">
       <div className="glass-panel rounded-[1.75rem] p-6 md:p-8">
         <Reveal>
           <SectionHeading
@@ -26,7 +26,7 @@ export function ContactSection() {
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal delay={0.05}>
             <div className="space-y-6">
-              <div className="rounded-[1.4rem] border border-border bg-background p-5">
+              <div className="p-5">
                 <p className="font-mono text-label uppercase tracking-[0.24em] text-muted-foreground">
                   Reach out
                 </p>
@@ -53,7 +53,7 @@ export function ContactSection() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group flex items-center justify-between rounded-[1.25rem] border border-border bg-background px-4 py-3.5 transition-transform duration-300 hover:-translate-y-0.5"
+                      className="group flex items-center justify-between px-4 py-3.5 transition-transform duration-300 hover:-translate-y-0.5"
                     >
                       <span className="flex items-center gap-3">
                         <Icon className="size-4.5" />
@@ -67,7 +67,7 @@ export function ContactSection() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="rounded-[1.4rem] border border-border bg-background p-5 md:p-6">
+            <div className="p-5 md:p-6">
               <ContactForm />
             </div>
           </Reveal>

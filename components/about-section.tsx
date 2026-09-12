@@ -71,8 +71,8 @@ export function AboutSection() {
           delay={0.1}
           className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]"
         >
-          <div className="glass-panel w-full overflow-hidden rounded-[1.35rem] p-3">
-            <div className="overflow-hidden rounded-[1.1rem] border border-border bg-background">
+          <div className="glass-panel w-full overflow-hidden p-3">
+            <div className="overflow-hidden">
               <Image
                 src={portraitImage}
                 alt="Portrait of Ayush Thakur"
@@ -82,7 +82,7 @@ export function AboutSection() {
                 priority
               />
             </div>
-            <div className="mt-4 rounded-[1rem] border border-border bg-background px-4 py-3">
+            <div className="mt-4 px-4 py-3">
               <p className="font-mono text-label uppercase tracking-[0.24em] text-muted-foreground">
                 Core skills
               </p>

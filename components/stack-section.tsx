@@ -109,7 +109,7 @@ function StackIcon({ item }: { item: StackItem }) {
 
 export function StackSection() {
   return (
-    <section id="stack" className="container-shell section-space">
+    <section id="stack" className="container-shell section-space border-t border-border">
       <Reveal>
         <SectionHeading
           eyebrow="Stack"
@@ -118,7 +118,7 @@ export function StackSection() {
         />
       </Reveal>
       <Reveal delay={0.05} className="mt-8">
-        <div className="rounded-[1.5rem] border border-border bg-card px-5 py-6 md:px-7">
+        <div className="border border-border px-5 py-6 md:px-7">
           <div className="grid grid-cols-3 gap-x-6 gap-y-7 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
             {siteConfig.stack.map((label) => (
               <StackIcon key={label} item={stackIcons[label]} />
