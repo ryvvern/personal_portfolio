@@ -9,7 +9,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="container-shell section-space">
       <SectionHeading title="Projects" count={siteConfig.projects.length} />
-      <div className="-mx-6 mt-10 border-t border-border">
+      <div className="-mx-6 border-t border-border">
         {siteConfig.projects.map((project, index) => (
           <div
             key={project.title}

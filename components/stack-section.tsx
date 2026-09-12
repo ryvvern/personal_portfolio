@@ -104,7 +104,7 @@ export function StackSection() {
   return (
     <section id="stack" className="container-shell section-space">
       <SectionHeading title="Stack" />
-      <div className="-mx-6 mt-8 border-t border-border">
+      <div className="-mx-6 border-t border-border">
         <div className="relative">
           <div
             className="pointer-events-none absolute inset-y-0 hidden border-r border-border md:block"
