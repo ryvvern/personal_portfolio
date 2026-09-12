@@ -4,6 +4,8 @@ export const siteConfig = {
     "A minimal personal portfolio for Ayush Thakur with a clean developer-focused design system.",
   url: "https://ayushthakur.dev",
   email: "ayushth199@gmail.com",
+  intro:
+    "I'm a software developer based in Delhi, working mainly with React, Next.js and TypeScript. I care about building things that are actually useful rather than technically impressive, and I pay attention to how interfaces feel to use.",
   navigation: [
     { label: "About", href: "/#about" },
     { label: "Stack", href: "/#stack" },
