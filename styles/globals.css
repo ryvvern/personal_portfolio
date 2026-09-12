@@ -32,6 +32,27 @@
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-ibm-plex-mono);
   --font-display: var(--font-manrope);
+
+  /* Type scale — five sizes, no others permitted */
+  --text-display: 1.875rem;
+  --text-display--line-height: 1.2;
+  --text-display--letter-spacing: -0.02em;
+  --text-heading: 1rem;
+  --text-heading--line-height: 1.4;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.6;
+  --text-secondary: 0.8125rem;
+  --text-secondary--line-height: 1.5;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.01em;
+
+  /* Layout */
+  --container-content: 40rem;
+
+  /* Section rhythm */
+  --spacing-section: 3rem;
+  --spacing-section-lg: 4rem;
 }
 
 :root {
