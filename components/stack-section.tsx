@@ -109,7 +109,7 @@ function StackIcon({ item }: { item: StackItem }) {
 
 export function StackSection() {
   return (
-    <section id="stack" className="container-shell pb-10 pt-6 md:pb-12 md:pt-8">
+    <section id="stack" className="container-shell section-space">
       <Reveal>
         <SectionHeading
           eyebrow="Stack"

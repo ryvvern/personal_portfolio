@@ -20,13 +20,13 @@ export function SectionHeading({
         align === "center" && "mx-auto text-center"
       )}
     >
-      <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary">
+      <p className="font-mono text-label uppercase tracking-[0.28em] text-primary">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-[-0.045em] text-balance md:text-4xl">
+      <h2 className="text-heading font-semibold tracking-[-0.045em] text-balance">
         {title}
       </h2>
-      <p className="text-base leading-7 text-muted-foreground md:text-[1.02rem]">
+      <p className="text-secondary leading-7 text-muted-foreground">
         {description}
       </p>
     </div>

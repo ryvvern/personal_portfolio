@@ -4,8 +4,8 @@ import { siteConfig } from "@/lib/site-config";
 
 export function SiteFooter() {
   return (
-    <footer className="container-shell pb-8 pt-2">
-      <div className="flex flex-col gap-4 border-t border-border/80 py-5 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+    <footer className="container-shell section-space">
+      <div className="flex flex-col gap-4 border-t border-border/80 py-5 text-label text-muted-foreground md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} Ayush Thakur.</p>
         <div className="flex flex-wrap gap-4">
           {siteConfig.socials.map((item) => (

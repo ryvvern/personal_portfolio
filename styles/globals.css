@@ -125,11 +125,20 @@
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full max-w-[1120px] px-5 md:px-7;
+    width: 100%;
+    max-width: var(--container-content);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
   }
 
   .section-space {
-    @apply py-16 md:py-20;
+    padding-block: var(--spacing-section);
+  }
+
+  @media (min-width: 48rem) {
+    .section-space {
+      padding-block: var(--spacing-section-lg);
+    }
   }
 
   .glass-panel {

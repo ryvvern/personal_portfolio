@@ -77,13 +77,13 @@ export function ContactForm() {
         required
       />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-6 text-muted-foreground">
+        <p className="text-secondary leading-6 text-muted-foreground">
           The form opens your default mail client to send directly to{" "}
           <span className="text-foreground">{siteConfig.email}</span>.
         </p>
         <Button
           type="submit"
-          className="h-12 rounded-full px-5 text-sm font-semibold"
+          className="h-12 rounded-full px-5 text-label font-semibold"
         >
           {status === "opening" ? "Opening mail app" : "Send message"}
           <ArrowUpRight className="size-4.5" />

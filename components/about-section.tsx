@@ -11,21 +11,21 @@ import { cn } from "@/lib/utils";
 
 export function AboutSection() {
   return (
-    <section id="about" className="container-shell pb-4 pt-24 md:pb-6 md:pt-28">
+    <section id="about" className="container-shell section-space">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-10">
         <Reveal delay={0.05} className="max-w-3xl lg:max-w-[760px]">
           <div className="space-y-5">
             <div className="space-y-3">
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary">
+              <p className="font-mono text-label uppercase tracking-[0.28em] text-primary">
                 About
               </p>
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] text-balance md:text-5xl lg:text-[3.6rem]">
+              <h1 className="max-w-3xl text-display font-semibold tracking-[-0.055em] text-balance">
                 Ayush Thakur
               </h1>
-              <p className="max-w-2xl text-lg text-foreground/88 md:text-xl">
+              <p className="max-w-2xl text-secondary text-foreground/88">
                 Software Developer &amp; Design Engineer
               </p>
-              <ul className="max-w-[46rem] list-disc space-y-0.5 pl-5 text-[0.88rem] leading-5.5 text-muted-foreground md:space-y-1 md:text-[0.96rem] md:leading-6.5">
+              <ul className="max-w-[46rem] list-disc space-y-0.5 pl-5 text-body leading-5.5 text-muted-foreground md:space-y-1 md:leading-6.5">
                 <li>I build AI-integrated apps with the intention of making them genuinely useful for people.</li>
                 <li>I care more about practical products than adding AI just for hype.</li>
                 <li>I mainly work with React, Next.js, TypeScript, and modern web tools.</li>
@@ -38,7 +38,7 @@ export function AboutSection() {
                 <Badge
                   key={item}
                   variant="outline"
-                  className="rounded-full border-border/80 bg-background px-3 py-1 text-[11px] tracking-[0.02em]"
+                  className="rounded-full border-border/80 bg-background px-3 py-1 text-label tracking-[0.02em]"
                 >
                   {item}
                 </Badge>
@@ -49,7 +49,7 @@ export function AboutSection() {
                 href="#projects"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "rounded-full px-5 text-sm font-medium"
+                  "rounded-full px-5 text-label font-medium"
                 )}
               >
                 View Projects
@@ -59,7 +59,7 @@ export function AboutSection() {
                 href="#contact"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full border-border/80 bg-transparent px-5 text-sm font-medium"
+                  "rounded-full border-border/80 bg-transparent px-5 text-label font-medium"
                 )}
               >
                 Contact Me
@@ -83,10 +83,10 @@ export function AboutSection() {
               />
             </div>
             <div className="mt-4 rounded-[1rem] border border-border bg-background px-4 py-3">
-              <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+              <p className="font-mono text-label uppercase tracking-[0.24em] text-muted-foreground">
                 Core skills
               </p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              <p className="mt-2 text-body leading-6 text-muted-foreground">
                 {siteConfig.primarySkills.join(" / ")}
               </p>
             </div>

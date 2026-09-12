@@ -27,17 +27,17 @@ export function ContactSection() {
           <Reveal delay={0.05}>
             <div className="space-y-6">
               <div className="rounded-[1.4rem] border border-border/80 bg-background p-5">
-                <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
+                <p className="font-mono text-label uppercase tracking-[0.24em] text-primary">
                   Reach out
                 </p>
                 <div className="mt-4 space-y-3">
                   <Link
                     href={`mailto:${siteConfig.email}`}
-                    className="block text-xl font-semibold tracking-tight transition-colors hover:text-primary md:text-2xl"
+                    className="block text-heading font-semibold tracking-tight transition-colors hover:text-primary"
                   >
                     {siteConfig.email}
                   </Link>
-                  <p className="text-sm leading-6 text-muted-foreground md:text-[0.95rem]">
+                  <p className="text-secondary leading-6 text-muted-foreground">
                     Based in India, collaborating remotely across product, design,
                     and engineering teams.
                   </p>
@@ -57,7 +57,7 @@ export function ContactSection() {
                     >
                       <span className="flex items-center gap-3">
                         <Icon className="size-4.5" />
-                        <span className="text-sm font-medium">{item.label}</span>
+                        <span className="text-label font-medium">{item.label}</span>
                       </span>
                       <ArrowUpRight className="size-4.5 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </Link>
