@@ -16,11 +16,7 @@ import { siteConfig } from "@/lib/site-config";
 export function ProjectsSection() {
   return (
     <section id="projects" className="container-shell section-space border-t border-border">
-      <SectionHeading
-        eyebrow="Projects"
-        title="Selected projects that reflect how I build."
-        description="A small selection of frontend and product-focused work with an emphasis on clean implementation, strong interface structure, and thoughtful presentation."
-      />
+      <SectionHeading eyebrow="Projects" />
       <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
         {siteConfig.projects.map((project) => (
           <Card key={project.title} className="glass-panel group h-full bg-transparent ring-0 py-0">

@@ -30,16 +30,22 @@ export const siteConfig = {
     "Design Systems",
   ],
   stack: [
-    "React",
-    "Cursor",
-    "Claude",
-    "ChatGPT",
-    "Figma",
-    "TypeScript",
-    "Git",
-    "JavaScript",
-    "Python",
-    "Next.js",
+    {
+      group: "Languages",
+      items: ["TypeScript", "JavaScript", "Python"],
+    },
+    {
+      group: "Frontend",
+      items: ["React", "Next.js"],
+    },
+    {
+      group: "Tools",
+      items: ["Git", "Figma"],
+    },
+    {
+      group: "AI",
+      items: ["Claude", "Cursor", "ChatGPT"],
+    },
   ],
   projects: [
     {

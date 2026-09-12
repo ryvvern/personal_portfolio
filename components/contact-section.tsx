@@ -15,11 +15,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="container-shell section-space border-t border-border">
       <div className="glass-panel rounded-[1.75rem] p-6 md:p-8">
-        <SectionHeading
-          eyebrow="Contact Me"
-          title="Let&apos;s build something clean and useful."
-          description="If you have a product idea, freelance opportunity, or frontend role in mind, feel free to reach out."
-        />
+        <SectionHeading eyebrow="Contact Me" />
         <div className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6">
             <div className="p-5">
