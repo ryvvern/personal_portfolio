@@ -60,7 +60,7 @@
 }
 
 :root {
-  --background: oklch(0.975 0.0015 106);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.235 0.004 260);
   --card: oklch(0.995 0.001 106);
   --card-foreground: oklch(0.235 0.004 260);
@@ -141,12 +141,12 @@
   }
 
   .section-space {
-    padding-block: var(--spacing-section);
+    padding-block: 2rem;
   }
 
   @media (min-width: 48rem) {
     .section-space {
-      padding-block: var(--spacing-section-lg);
+      padding-block: 2.5rem;
     }
   }
 
