@@ -104,15 +104,10 @@ export function AboutSection() {
         style={{ marginInline: "-1.5rem" }}
       >
         <Image src={coverImage} alt="" fill className="object-cover" priority />
+        <div className="absolute bottom-0 left-6 size-[116px] translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
       </div>
 
       <div className="relative" style={{ marginTop: "20px", minHeight: "58px" }}>
-        <div
-          className="absolute left-6 flex items-center justify-center"
-          style={{ top: 0, width: "116px", height: "116px" }}
-        >
-          <div className="size-[84px] rounded-full bg-foreground" />
-        </div>
         <div
           className="absolute inset-y-0 border-border"
           style={{ left: "calc(116px + 0.5rem)", borderLeftWidth: "1px" }}
