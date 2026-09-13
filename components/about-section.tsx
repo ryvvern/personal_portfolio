@@ -100,7 +100,7 @@ export function AboutSection() {
       style={{ overflowX: "hidden" }}
     >
       <div
-        className="relative h-[200px]"
+        className="relative h-[320px]"
         style={{ marginInline: "-1.5rem" }}
       >
         <Image src={coverImage} alt="" fill className="object-cover" priority />
