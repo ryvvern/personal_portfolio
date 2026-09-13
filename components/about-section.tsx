@@ -35,6 +35,21 @@ const socialIcons = {
   Twitter: Twitter,
 };
 
+function FullBleedRule() {
+  return (
+    <div
+      className="border-border"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderTopWidth: "1px",
+      }}
+    />
+  );
+}
+
 function LiveTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -79,9 +94,13 @@ function Greeting() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="container-shell section-space">
+    <section
+      id="about"
+      className="container-shell"
+      style={{ overflowX: "hidden" }}
+    >
       <div className="relative">
-        <div className="relative h-40 w-full overflow-hidden rounded-sm border border-border">
+        <div className="relative h-[280px] w-full">
           <Image
             src={coverImage}
             alt=""
@@ -90,19 +109,26 @@ export function AboutSection() {
             priority
           />
         </div>
-        <div className="absolute bottom-0 left-6 size-24 translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
+        <FullBleedRule />
+        <div className="absolute bottom-0 left-0 size-32 translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
       </div>
 
-      <div className="mt-16">
-        <h1 className="text-display font-semibold tracking-[-0.055em] text-balance">
-          Ayush Thakur
-        </h1>
-        <p className="mt-1 font-mono text-body text-muted-foreground">
+      <div className="flex items-end py-3">
+        <div style={{ marginLeft: "calc(8rem + 1rem)" }}>
+          <h1 className="text-display font-semibold tracking-[-0.055em] text-balance">
+            Ayush Thakur
+          </h1>
+        </div>
+      </div>
+      <FullBleedRule />
+      <div className="py-4">
+        <p className="font-mono text-body text-muted-foreground">
           {siteConfig.tagline}
         </p>
       </div>
+      <FullBleedRule />
 
-      <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-0">
+      <div className="grid grid-cols-1 gap-3 py-4 md:grid-cols-2 md:gap-0">
         <div className="flex flex-col gap-3 md:border-r md:border-border md:pr-6">
           {siteConfig.detailColumns.left.map((item) => {
             const Icon = detailIcons[item.icon as keyof typeof detailIcons];
@@ -160,8 +186,9 @@ export function AboutSection() {
           })}
         </div>
       </div>
+      <FullBleedRule />
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 py-4">
         {siteConfig.socials.map((item) => {
           const Icon = socialIcons[item.label];
           return (
@@ -178,6 +205,7 @@ export function AboutSection() {
           );
         })}
       </div>
+      <FullBleedRule />
 
       <div className="mt-8">
         <Greeting />
@@ -202,7 +230,7 @@ export function AboutSection() {
           </Badge>
         ))}
       </div>
-      <div className="mt-8 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap gap-3 pb-8">
         <Link
           href="#projects"
           className={cn(
