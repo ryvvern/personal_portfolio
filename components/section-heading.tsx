@@ -5,7 +5,7 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ title, count }: SectionHeadingProps) {
   return (
-    <div className="pt-4 pb-3">
+    <div className="pt-2 pb-2">
       <h2 className="text-section font-semibold text-foreground">
         {title}
         {count !== undefined && (
