@@ -125,7 +125,10 @@ export function AboutSection() {
           />
         </div>
         <FullBleedRule />
-        <div className="absolute bottom-0 left-0 size-32 translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
+        <div
+          className="absolute left-0 size-32 rounded-full bg-foreground ring-4 ring-background"
+          style={{ bottom: "-51.2px" }}
+        />
       </div>
 
       <div className="relative" style={{ marginLeft: "calc(8rem + 1rem)" }}>
@@ -133,7 +136,10 @@ export function AboutSection() {
           className="absolute inset-y-0 w-px bg-border"
           style={{ left: "-1rem" }}
         />
-        <div className="border-b border-border py-3 pl-6">
+        <div
+          className="border-b border-border pl-6"
+          style={{ paddingTop: "12px", paddingBottom: "10px" }}
+        >
           <h1 className="text-section font-semibold tracking-[-0.055em] text-balance">
             Ayush Thakur
           </h1>
