@@ -79,6 +79,7 @@
   --input: oklch(0.93 0.001 106);
   --ring: oklch(0.38 0.01 260 / 0.6);
   --radius: 0.375rem;
+  --hatch: oklch(0.88 0.001 106 / 0.35);
 }
 
 .dark {
@@ -100,6 +101,7 @@
   --border: oklch(1 0 0 / 0.08);
   --input: oklch(1 0 0 / 0.06);
   --ring: oklch(1 0 0 / 0.6);
+  --hatch: oklch(1 0 0 / 0.05);
 }
 
 @layer base {
@@ -172,11 +174,11 @@
 
   .hatched {
     background-image: repeating-linear-gradient(
-      45deg,
-      var(--border) 0px,
-      var(--border) 1px,
-      transparent 1px,
-      transparent 8px
+      135deg,
+      var(--hatch) 0px,
+      var(--hatch) 0.5px,
+      transparent 0.5px,
+      transparent 7px
     );
   }
 }

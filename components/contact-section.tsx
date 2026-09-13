@@ -13,7 +13,7 @@ const socialIcons = {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="container-shell section-space">
+    <section id="contact" className="container-shell pb-8">
       <SectionHeading title="Contact" />
       <div>
         <Link

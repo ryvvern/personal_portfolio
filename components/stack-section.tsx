@@ -102,7 +102,7 @@ function StackIcon({ item }: { item: StackItem }) {
 
 export function StackSection() {
   return (
-    <section id="stack" className="container-shell section-space">
+    <section id="stack" className="container-shell pb-8">
       <SectionHeading title="Stack" />
       <div className="-mx-6 border-t border-border">
         <div className="relative">

@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="container-shell section-space">
+    <section id="projects" className="container-shell pb-8">
       <SectionHeading title="Projects" count={siteConfig.projects.length} />
       <div className="-mx-6 border-t border-border">
         {siteConfig.projects.map((project, index) => (
