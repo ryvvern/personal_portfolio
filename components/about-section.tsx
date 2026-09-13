@@ -65,6 +65,22 @@ function FullBleedHatchedBand() {
   );
 }
 
+function FullBleedCover() {
+  return (
+    <div
+      className="relative h-[280px]"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
+      <Image src={coverImage} alt="" fill className="object-cover" priority />
+    </div>
+  );
+}
+
 function LiveTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -115,19 +131,11 @@ export function AboutSection() {
       style={{ overflowX: "hidden" }}
     >
       <div className="relative">
-        <div className="relative h-[280px] w-full">
-          <Image
-            src={coverImage}
-            alt=""
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <FullBleedCover />
         <FullBleedRule />
         <div
           className="absolute left-0 size-32 rounded-full bg-foreground ring-4 ring-background"
-          style={{ bottom: "-51.2px" }}
+          style={{ bottom: "-96px" }}
         />
       </div>
 
