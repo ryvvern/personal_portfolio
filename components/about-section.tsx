@@ -125,18 +125,20 @@ export function AboutSection() {
           />
         </div>
         <FullBleedRule />
-        <div className="absolute bottom-0 left-0 flex size-32 translate-y-1/2 items-center justify-center border border-border bg-background">
-          <div className="size-28 rounded-full bg-foreground" />
-        </div>
+        <div className="absolute bottom-0 left-0 size-32 translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
       </div>
 
-      <div style={{ marginLeft: "calc(8rem + 1rem)" }}>
-        <div className="border-b border-border py-3">
+      <div className="relative" style={{ marginLeft: "calc(8rem + 1rem)" }}>
+        <div
+          className="absolute inset-y-0 w-px bg-border"
+          style={{ left: "-1rem" }}
+        />
+        <div className="border-b border-border py-3 pl-6">
           <h1 className="text-section font-semibold tracking-[-0.055em] text-balance">
             Ayush Thakur
           </h1>
         </div>
-        <div className="py-3">
+        <div className="py-3 pl-6">
           <p className="font-mono text-body text-muted-foreground">
             {siteConfig.tagline}
           </p>
