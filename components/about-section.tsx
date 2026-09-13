@@ -65,18 +65,97 @@ function FullBleedHatchedBand() {
   );
 }
 
-function FullBleedCover() {
+const COVER_TOP_HEIGHT = 200;
+const NOTCH_ROW_HEIGHT = 136;
+const NOTCH_CELL_WIDTH = 136;
+const AVATAR_SIZE = 104;
+const COVER_TOTAL_HEIGHT = COVER_TOP_HEIGHT + NOTCH_ROW_HEIGHT;
+
+function FullBleedNotchedCover() {
   return (
-    <div
-      className="relative h-[280px]"
-      style={{
-        width: "100vw",
-        position: "relative",
-        left: "50%",
-        transform: "translateX(-50%)",
-      }}
-    >
-      <Image src={coverImage} alt="" fill className="object-cover" priority />
+    <div className="relative" style={{ height: COVER_TOTAL_HEIGHT }}>
+      <div
+        style={{
+          width: "100vw",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          top: 0,
+          height: COVER_TOP_HEIGHT,
+        }}
+      >
+        <Image
+          src={coverImage}
+          alt=""
+          fill
+          className="object-cover"
+          style={{ objectPosition: "50% 0%" }}
+          priority
+        />
+      </div>
+      <div
+        className="absolute"
+        style={{
+          top: COVER_TOP_HEIGHT,
+          left: 0,
+          right: 0,
+          height: NOTCH_ROW_HEIGHT,
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            width: "100vw",
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
+            top: -COVER_TOP_HEIGHT,
+            height: COVER_TOTAL_HEIGHT,
+          }}
+        >
+          <Image
+            src={coverImage}
+            alt=""
+            fill
+            className="object-cover"
+            style={{ objectPosition: "50% 0%" }}
+          />
+        </div>
+        <div
+          className="absolute bg-background"
+          style={{
+            left: 0,
+            top: 0,
+            width: NOTCH_CELL_WIDTH,
+            height: NOTCH_ROW_HEIGHT,
+          }}
+        />
+        <div
+          className="absolute border-border"
+          style={{
+            left: NOTCH_CELL_WIDTH,
+            top: 0,
+            right: 0,
+            borderTopWidth: "1px",
+          }}
+        />
+      </div>
+      <div
+        className="absolute flex items-center justify-center border-border"
+        style={{
+          top: COVER_TOP_HEIGHT,
+          left: 0,
+          width: NOTCH_CELL_WIDTH,
+          height: NOTCH_ROW_HEIGHT,
+          borderRightWidth: "1px",
+        }}
+      >
+        <div
+          className="rounded-full bg-foreground"
+          style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
+        />
+      </div>
+      <FullBleedRule />
     </div>
   );
 }
@@ -130,20 +209,10 @@ export function AboutSection() {
       className="container-shell"
       style={{ overflowX: "hidden" }}
     >
-      <div className="relative">
-        <FullBleedCover />
-        <FullBleedRule />
-        <div
-          className="absolute left-0 size-32 rounded-full bg-foreground ring-4 ring-background"
-          style={{ bottom: "-96px" }}
-        />
-      </div>
+      <FullBleedNotchedCover />
 
-      <div className="relative" style={{ marginLeft: "calc(8rem + 1rem)" }}>
-        <div
-          className="absolute inset-y-0 w-px bg-border"
-          style={{ left: "-1rem" }}
-        />
+      <div className="relative" style={{ marginLeft: NOTCH_CELL_WIDTH }}>
+        <div className="absolute inset-y-0 left-0 w-px bg-border" />
         <div
           className="border-b border-border pl-6"
           style={{ paddingTop: "12px", paddingBottom: "10px" }}
