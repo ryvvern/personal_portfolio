@@ -8,8 +8,8 @@ Exactly six sizes, use the token utilities only:
 
 | Utility | Size | Usage |
 |---|---|---|
-| `text-display` | 36px | the name in the hero, and nothing else on the site |
-| `text-section` | 28px | used only for section headings |
+| `text-display` | 36px | reserved, currently unused |
+| `text-section` | 28px | section headings, and the name in the hero |
 | `text-heading` | 16px | section headings |
 | `text-body` | 14px | body copy, default |
 | `text-supporting` | 13px | supporting text, descriptions |
