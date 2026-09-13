@@ -50,6 +50,21 @@ function FullBleedRule() {
   );
 }
 
+function FullBleedHatchedBand() {
+  return (
+    <div
+      className="hatched h-6 border-t border-b"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderColor: "var(--hatch)",
+      }}
+    />
+  );
+}
+
 function LiveTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -113,20 +128,15 @@ export function AboutSection() {
         <div className="absolute bottom-0 left-0 size-32 translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
       </div>
 
-      <div className="flex items-end py-3">
-        <div style={{ marginLeft: "calc(8rem + 1rem)" }}>
-          <h1 className="text-display font-semibold tracking-[-0.055em] text-balance">
-            Ayush Thakur
-          </h1>
-        </div>
-      </div>
-      <FullBleedRule />
-      <div className="py-4">
-        <p className="font-mono text-body text-muted-foreground">
+      <div className="py-3" style={{ marginLeft: "calc(8rem + 1rem)" }}>
+        <h1 className="text-display font-semibold tracking-[-0.055em] text-balance">
+          Ayush Thakur
+        </h1>
+        <p className="mt-1 font-mono text-body text-muted-foreground">
           {siteConfig.tagline}
         </p>
       </div>
-      <FullBleedRule />
+      <FullBleedHatchedBand />
 
       <div className="grid grid-cols-1 gap-3 py-4 md:grid-cols-2 md:gap-0">
         <div className="flex flex-col gap-3 md:border-r md:border-border md:pr-6">
