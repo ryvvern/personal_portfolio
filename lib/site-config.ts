@@ -6,6 +6,23 @@ export const siteConfig = {
   email: "ayushth199@gmail.com",
   intro:
     "I'm a software developer based in Delhi, working mainly with React, Next.js and TypeScript. I care about building things that are actually useful rather than technically impressive, and I pay attention to how interfaces feel to use.",
+  tagline: "Building things people actually use.",
+  detailColumns: {
+    left: [
+      { icon: "Code", label: "Software Developer" },
+      { icon: "MapPin", label: "Delhi, India" },
+      { icon: "Link", label: "github.com/ryvvern", href: "https://github.com/ryvvern" },
+    ],
+    right: [
+      { icon: "Clock", label: "time" as const },
+      { icon: "Mail", label: "ayushth199@gmail.com", href: "mailto:ayushth199@gmail.com" },
+    ],
+  },
+  aboutBullets: [
+    "I'm transitioning into software engineering from an infrastructure QC role, and I've been shipping projects to get there rather than waiting for permission.",
+    "I work mainly with React, Next.js and TypeScript, and I care more about whether something is useful than whether it's clever.",
+    "Currently building a webhook delivery service and a subscription reminder app, both open source.",
+  ],
   navigation: [
     { label: "About", href: "/#about" },
     { label: "Stack", href: "/#stack" },
