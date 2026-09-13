@@ -35,21 +35,6 @@ const socialIcons = {
   Twitter: Twitter,
 };
 
-function FullBleedRule() {
-  return (
-    <div
-      className="border-border"
-      style={{
-        width: "100vw",
-        position: "relative",
-        left: "50%",
-        transform: "translateX(-50%)",
-        borderTopWidth: "1px",
-      }}
-    />
-  );
-}
-
 function FullBleedHatchedBand() {
   return (
     <div
@@ -62,101 +47,6 @@ function FullBleedHatchedBand() {
         borderColor: "var(--hatch)",
       }}
     />
-  );
-}
-
-const COVER_TOP_HEIGHT = 200;
-const NOTCH_ROW_HEIGHT = 136;
-const NOTCH_CELL_WIDTH = 136;
-const AVATAR_SIZE = 104;
-const COVER_TOTAL_HEIGHT = COVER_TOP_HEIGHT + NOTCH_ROW_HEIGHT;
-
-function FullBleedNotchedCover() {
-  return (
-    <div className="relative" style={{ height: COVER_TOTAL_HEIGHT }}>
-      <div
-        style={{
-          width: "100vw",
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-          top: 0,
-          height: COVER_TOP_HEIGHT,
-        }}
-      >
-        <Image
-          src={coverImage}
-          alt=""
-          fill
-          className="object-cover"
-          style={{ objectPosition: "50% 0%" }}
-          priority
-        />
-      </div>
-      <div
-        className="absolute"
-        style={{
-          top: COVER_TOP_HEIGHT,
-          left: 0,
-          right: 0,
-          height: NOTCH_ROW_HEIGHT,
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            width: "100vw",
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-            top: -COVER_TOP_HEIGHT,
-            height: COVER_TOTAL_HEIGHT,
-          }}
-        >
-          <Image
-            src={coverImage}
-            alt=""
-            fill
-            className="object-cover"
-            style={{ objectPosition: "50% 0%" }}
-          />
-        </div>
-        <div
-          className="absolute bg-background"
-          style={{
-            left: 0,
-            top: 0,
-            width: NOTCH_CELL_WIDTH,
-            height: NOTCH_ROW_HEIGHT,
-          }}
-        />
-        <div
-          className="absolute border-border"
-          style={{
-            left: NOTCH_CELL_WIDTH,
-            top: 0,
-            right: 0,
-            borderTopWidth: "1px",
-          }}
-        />
-      </div>
-      <div
-        className="absolute flex items-center justify-center border-border"
-        style={{
-          top: COVER_TOP_HEIGHT,
-          left: 0,
-          width: NOTCH_CELL_WIDTH,
-          height: NOTCH_ROW_HEIGHT,
-          borderRightWidth: "1px",
-        }}
-      >
-        <div
-          className="rounded-full bg-foreground"
-          style={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-        />
-      </div>
-      <FullBleedRule />
-    </div>
   );
 }
 
@@ -209,20 +99,24 @@ export function AboutSection() {
       className="container-shell"
       style={{ overflowX: "hidden" }}
     >
-      <FullBleedNotchedCover />
+      <div
+        className="relative h-[200px]"
+        style={{ marginInline: "-1.5rem" }}
+      >
+        <Image src={coverImage} alt="" fill className="object-cover" priority />
+        <div className="absolute bottom-0 left-6 size-[116px] translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
+      </div>
 
-      <div className="relative" style={{ marginLeft: NOTCH_CELL_WIDTH }}>
-        <div className="absolute inset-y-0 left-0 w-px bg-border" />
+      <div className="relative" style={{ marginTop: "20px", minHeight: "58px" }}>
         <div
-          className="border-b border-border pl-6"
-          style={{ paddingTop: "12px", paddingBottom: "10px" }}
-        >
+          className="absolute inset-y-0 border-border"
+          style={{ left: "calc(116px + 0.5rem)", borderLeftWidth: "1px" }}
+        />
+        <div style={{ paddingLeft: "calc(116px + 1.5rem)" }}>
           <h1 className="text-section font-semibold tracking-[-0.055em] text-balance">
             Ayush Thakur
           </h1>
-        </div>
-        <div className="py-3 pl-6">
-          <p className="font-mono text-body text-muted-foreground">
+          <p className="mt-1 font-mono text-body text-muted-foreground">
             {siteConfig.tagline}
           </p>
         </div>
@@ -287,7 +181,7 @@ export function AboutSection() {
           })}
         </div>
       </div>
-      <FullBleedRule />
+      <div className="border-t border-border" />
 
       <div className="flex flex-wrap gap-2 py-4">
         {siteConfig.socials.map((item) => {
@@ -306,7 +200,7 @@ export function AboutSection() {
           );
         })}
       </div>
-      <FullBleedRule />
+      <div className="border-t border-border" />
 
       <div className="mt-8">
         <Greeting />

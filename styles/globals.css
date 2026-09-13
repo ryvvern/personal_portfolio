@@ -34,10 +34,10 @@
   --font-display: var(--font-manrope);
 
   /* Type scale — six sizes, no others permitted */
-  --text-display: 2.25rem;
+  --text-display: 1.75rem;
   --text-display--line-height: 1.2;
   --text-display--letter-spacing: -0.02em;
-  --text-section: 1.75rem;
+  --text-section: 1.375rem;
   --text-section--line-height: 1.3;
   --text-section--letter-spacing: -0.01em;
   --text-heading: 1rem;
