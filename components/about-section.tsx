@@ -1,97 +1,278 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Clock,
+  Code,
+  Github,
+  Linkedin,
+  Link as LinkIcon,
+  Mail,
+  MapPin,
+  Twitter,
+} from "lucide-react";
 
-import portraitImage from "@/app/AT.png";
-import { Reveal } from "@/components/reveal";
+import coverImage from "@/app/NEW.png";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/lib/button-styles";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
+const detailIcons = {
+  Code,
+  MapPin,
+  Link: LinkIcon,
+  Clock,
+  Mail,
+} as const;
+
+const socialIcons = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Twitter: Twitter,
+};
+
+function FullBleedRule() {
+  return (
+    <div
+      className="border-border"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderTopWidth: "1px",
+      }}
+    />
+  );
+}
+
+function FullBleedHatchedBand() {
+  return (
+    <div
+      className="hatched h-6 border-t border-b"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderColor: "var(--hatch)",
+      }}
+    />
+  );
+}
+
+function LiveTime() {
+  const [time, setTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    function updateTime() {
+      setTime(
+        new Intl.DateTimeFormat("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }).format(new Date())
+      );
+    }
+    updateTime();
+    const id = setInterval(updateTime, 60000);
+    return () => clearInterval(id);
+  }, []);
+
+  return <span>{time ?? "--:-- --"}</span>;
+}
+
+function Greeting() {
+  const [greeting, setGreeting] = useState<string | null>(null);
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting("Good morning");
+    } else if (hour < 17) {
+      setGreeting("Good afternoon");
+    } else {
+      setGreeting("Good evening");
+    }
+  }, []);
+
+  return (
+    <h2 className="font-handwritten text-display text-foreground">
+      {greeting ?? "Hello"}
+    </h2>
+  );
+}
+
 export function AboutSection() {
   return (
-    <section id="about" className="container-shell pb-4 pt-24 md:pb-6 md:pt-28">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-8 xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-10">
-        <Reveal delay={0.05} className="max-w-3xl lg:max-w-[760px]">
-          <div className="space-y-5">
-            <div className="space-y-3">
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary">
-                About
-              </p>
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] text-balance md:text-5xl lg:text-[3.6rem]">
-                Ayush Thakur
-              </h1>
-              <p className="max-w-2xl text-lg text-foreground/88 md:text-xl">
-                Software Developer &amp; Design Engineer
-              </p>
-              <ul className="max-w-[46rem] list-disc space-y-0.5 pl-5 text-[0.88rem] leading-5.5 text-muted-foreground md:space-y-1 md:text-[0.96rem] md:leading-6.5">
-                <li>I build AI-integrated apps with the intention of making them genuinely useful for people.</li>
-                <li>I care more about practical products than adding AI just for hype.</li>
-                <li>I mainly work with React, Next.js, TypeScript, and modern web tools.</li>
-                <li>Design is one of my core interests, especially clean and simple interfaces.</li>
-                <li>I like combining engineering, product thinking, and design in one workflow.</li>
-              </ul>
-            </div>
-            <div className="flex flex-wrap gap-2.5">
-              {siteConfig.aboutHighlights.map((item) => (
-                <Badge
-                  key={item}
-                  variant="outline"
-                  className="rounded-full border-border/80 bg-background px-3 py-1 text-[11px] tracking-[0.02em]"
-                >
-                  {item}
-                </Badge>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-3">
+    <section id="about" className="container-shell">
+      <div
+        className="relative h-[320px]"
+        style={{ marginInline: "-1.5rem" }}
+      >
+        <Image src={coverImage} alt="" fill className="object-cover" priority />
+        <div
+          className="absolute bottom-0 left-6 size-[136px] rounded-full bg-foreground ring-4 ring-background"
+          style={{ transform: "translateY(60px)" }}
+        />
+      </div>
+
+      <div className="relative flex flex-col justify-center" style={{ minHeight: "68px" }}>
+        <div
+          className="absolute inset-y-0 border-border"
+          style={{ left: "calc(136px + 2rem)", borderLeftWidth: "1px" }}
+        />
+        <div style={{ paddingLeft: "calc(136px + 3rem)" }}>
+          <h1 className="font-mono text-section font-semibold tracking-[-0.03em] text-balance">
+            ayush_thakur
+          </h1>
+        </div>
+        <div
+          className="border-border"
+          style={{
+            marginLeft: "calc(136px + 2rem)",
+            marginRight: "-1.5rem",
+            borderTopWidth: "1px",
+          }}
+        />
+        <div style={{ paddingLeft: "calc(136px + 3rem)" }}>
+          <p className="mt-1 font-mono text-label text-muted-foreground">
+            {siteConfig.tagline}
+          </p>
+        </div>
+      </div>
+      <FullBleedHatchedBand />
+
+      <div className="grid grid-cols-1 gap-3 py-4 md:grid-cols-2 md:gap-0">
+        <div className="flex flex-col gap-3 md:border-r md:border-border md:pr-6">
+          {siteConfig.detailColumns.left.map((item) => {
+            const Icon = detailIcons[item.icon as keyof typeof detailIcons];
+            const content = (
+              <span className="flex items-center gap-3">
+                <Icon className="size-4 text-muted-foreground" />
+                <span className="font-mono text-body">{item.label}</span>
+              </span>
+            );
+            return "href" in item && item.href ? (
               <Link
-                href="#projects"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "rounded-full px-5 text-sm font-medium"
-                )}
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors duration-150 hover:text-foreground"
               >
-                View Projects
-                <ArrowRight className="size-4" />
+                {content}
               </Link>
+            ) : (
+              <div key={item.label}>{content}</div>
+            );
+          })}
+        </div>
+        <div className="flex flex-col gap-3 md:pl-6">
+          {siteConfig.detailColumns.right.map((item) => {
+            const Icon = detailIcons[item.icon as keyof typeof detailIcons];
+            if (item.label === "time") {
+              return (
+                <div key={item.icon} className="flex items-center gap-3">
+                  <Icon className="size-4 text-muted-foreground" />
+                  <span className="font-mono text-body">
+                    <LiveTime />
+                  </span>
+                </div>
+              );
+            }
+            const content = (
+              <span className="flex items-center gap-3">
+                <Icon className="size-4 text-muted-foreground" />
+                <span className="font-mono text-body">{item.label}</span>
+              </span>
+            );
+            return "href" in item && item.href ? (
               <Link
-                href="#contact"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full border-border/80 bg-transparent px-5 text-sm font-medium"
-                )}
+                key={item.label}
+                href={item.href}
+                className="transition-colors duration-150 hover:text-foreground"
               >
-                Contact Me
+                {content}
               </Link>
-            </div>
-          </div>
-        </Reveal>
-        <Reveal
-          delay={0.1}
-          className="mx-auto w-full max-w-[280px] lg:mx-0 lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]"
+            ) : (
+              <div key={item.label}>{content}</div>
+            );
+          })}
+        </div>
+      </div>
+      <FullBleedRule />
+
+      <div className="flex flex-wrap gap-2 py-4">
+        {siteConfig.socials.map((item) => {
+          const Icon = socialIcons[item.label];
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={item.label}
+              className="flex size-8 items-center justify-center rounded-sm border border-border text-muted-foreground transition-colors duration-150 hover:text-foreground"
+            >
+              <Icon className="size-4" />
+            </Link>
+          );
+        })}
+      </div>
+
+      <FullBleedHatchedBand />
+      <div className="py-4">
+        <Greeting />
+      </div>
+      <FullBleedRule />
+
+      <div className="mt-8">
+        <ul className="flex flex-col gap-3 text-body">
+          {siteConfig.aboutBullets.map((bullet) => (
+            <li key={bullet} className="flex gap-3">
+              <span className="text-muted-foreground">—</span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-2">
+        {siteConfig.aboutHighlights.map((item) => (
+          <Badge
+            key={item}
+            variant="outline"
+            className="rounded-full border-border bg-transparent px-3 py-1 text-label text-muted-foreground tracking-[0.02em]"
+          >
+            {item}
+          </Badge>
+        ))}
+      </div>
+      <div className="mt-8 flex flex-wrap gap-3 pb-8">
+        <Link
+          href="#projects"
+          className={cn(
+            buttonVariants({ size: "lg" }),
+            "rounded-full px-5 font-medium"
+          )}
         >
-          <div className="glass-panel w-full overflow-hidden rounded-[1.35rem] p-3">
-            <div className="overflow-hidden rounded-[1.1rem] border border-border bg-background">
-              <Image
-                src={portraitImage}
-                alt="Portrait of Ayush Thakur"
-                width={720}
-                height={920}
-                className="h-full w-full object-cover"
-                priority
-              />
-            </div>
-            <div className="mt-4 rounded-[1rem] border border-border bg-background px-4 py-3">
-              <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-                Core skills
-              </p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {siteConfig.primarySkills.join(" / ")}
-              </p>
-            </div>
-          </div>
-        </Reveal>
+          View Projects
+          <ArrowRight className="size-4" />
+        </Link>
+        <Link
+          href="#contact"
+          className={cn(
+            buttonVariants({ variant: "outline", size: "lg" }),
+            "rounded-full border-border bg-transparent px-5 text-label font-medium"
+          )}
+        >
+          Contact Me
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -46,18 +45,10 @@ export default async function BlogIndexPage() {
 
   return (
     <main className="container-shell section-space pt-32">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Writing"
-          title="Field notes on building interfaces that feel intentional."
-          description="Short essays on motion systems, frontend architecture, and the small details that make software feel crafted."
-        />
-      </Reveal>
+      <SectionHeading title="Writing" count={posts.length} />
       <div className="mt-12 grid gap-6">
-        {posts.map((post, index) => (
-          <Reveal key={post.slug} delay={index * 0.08}>
-            <BlogCard post={post} />
-          </Reveal>
+        {posts.map((post) => (
+          <BlogCard key={post.slug} post={post} />
         ))}
       </div>
     </main>

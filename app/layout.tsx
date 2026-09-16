@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Manrope } from "next/font/google";
+import { Homemade_Apple, IBM_Plex_Mono, Manrope } from "next/font/google";
 
+import favicon from "@/app/AT.png";
+import { PageFrame } from "@/components/page-frame";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -16,6 +18,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const handwritten = Homemade_Apple({
+  variable: "--font-homemade-apple",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -50,6 +58,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
+  icons: {
+    icon: favicon.src,
+  },
 };
 
 export default function RootLayout({
@@ -59,14 +70,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.variable} ${ibmPlexMono.variable}`}>
+      <body
+        className={`${manrope.variable} ${ibmPlexMono.variable} ${handwritten.variable} overflow-x-hidden`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative min-h-screen overflow-x-hidden">
+          <PageFrame />
+          <div className="relative min-h-screen">
             <SiteHeader />
             {children}
             <SiteFooter />

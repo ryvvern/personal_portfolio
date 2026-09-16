@@ -13,19 +13,20 @@ import {
   siTypescript,
 } from "simple-icons";
 
-import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/lib/site-config";
 
+type StackToolLabel = (typeof siteConfig.stack)[number]["items"][number];
+
 type StackItem = {
-  label: (typeof siteConfig.stack)[number];
+  label: StackToolLabel;
   hex: string;
   path?: string;
   icon?: IconDefinition;
   monochrome?: boolean;
 };
 
-const stackIcons: Record<(typeof siteConfig.stack)[number], StackItem> = {
+const stackIcons: Record<StackToolLabel, StackItem> = {
   React: {
     label: "React",
     hex: `#${siReact.hex}`,
@@ -86,20 +87,12 @@ function StackIcon({ item }: { item: StackItem }) {
     <div
       title={item.label}
       aria-label={item.label}
-      className="flex items-center justify-center transition-transform duration-200 hover:-translate-y-0.5"
-      style={item.monochrome ? undefined : { color: item.hex }}
+      className="flex items-center justify-center text-muted-foreground"
     >
       {item.icon ? (
-        <FontAwesomeIcon
-          icon={item.icon}
-          className={`h-11 w-11 ${item.monochrome ? "text-foreground" : ""}`}
-        />
+        <FontAwesomeIcon icon={item.icon} className="size-4" />
       ) : (
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          className={`h-11 w-11 fill-current ${item.monochrome ? "text-foreground" : ""}`}
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 fill-current">
           <path d={item.path} />
         </svg>
       )}
@@ -109,23 +102,47 @@ function StackIcon({ item }: { item: StackItem }) {
 
 export function StackSection() {
   return (
-    <section id="stack" className="container-shell pb-10 pt-6 md:pb-12 md:pt-8">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Stack"
-          title="Tools I use to design and build."
-          description="A focused set of tools for frontend development, design work, and AI-assisted product building."
-        />
-      </Reveal>
-      <Reveal delay={0.05} className="mt-8">
-        <div className="rounded-[1.5rem] border border-border bg-card px-5 py-6 md:px-7">
-          <div className="grid grid-cols-3 gap-x-6 gap-y-7 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
-            {siteConfig.stack.map((label) => (
-              <StackIcon key={label} item={stackIcons[label]} />
-            ))}
-          </div>
+    <section id="stack" className="container-shell pb-8">
+      <SectionHeading title="Stack" />
+      <div className="-mx-6 border-t border-border">
+        <div className="relative">
+          <div
+            className="pointer-events-none absolute inset-y-0 hidden border-r border-border md:block"
+            style={{ left: "calc(1.5rem + 10rem)" }}
+          />
+          {siteConfig.stack.map((group, index) => (
+            <div
+              key={group.group}
+              className={
+                index === 0
+                  ? "flex flex-col gap-2 px-6 py-4 md:flex-row md:items-center"
+                  : "flex flex-col gap-2 border-t border-border px-6 py-4 md:flex-row md:items-center"
+              }
+            >
+              <div className="flex items-center gap-2 md:w-40 md:shrink-0">
+                <span className="font-mono text-label text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-mono text-label text-foreground">
+                  {group.group}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 md:pl-4">
+                {group.items.map((label) => (
+                  <div
+                    key={label}
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1"
+                  >
+                    <StackIcon item={stackIcons[label]} />
+                    <span className="font-mono text-body text-foreground">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      </Reveal>
+        <div className="border-t border-border" />
+      </div>
     </section>
   );
 }

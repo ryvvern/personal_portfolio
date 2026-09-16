@@ -4,6 +4,25 @@ export const siteConfig = {
     "A minimal personal portfolio for Ayush Thakur with a clean developer-focused design system.",
   url: "https://ayushthakur.dev",
   email: "ayushth199@gmail.com",
+  intro:
+    "I'm a software developer based in Delhi, working mainly with React, Next.js and TypeScript. I care about building things that are actually useful rather than technically impressive, and I pay attention to how interfaces feel to use.",
+  tagline: "Building things people actually use.",
+  detailColumns: {
+    left: [
+      { icon: "Code", label: "Software Developer" },
+      { icon: "MapPin", label: "Delhi, India" },
+      { icon: "Link", label: "github.com/ryvvern", href: "https://github.com/ryvvern" },
+    ],
+    right: [
+      { icon: "Clock", label: "time" as const },
+      { icon: "Mail", label: "ayushth199@gmail.com", href: "mailto:ayushth199@gmail.com" },
+    ],
+  },
+  aboutBullets: [
+    "I am Ayush, a software developer who builds things instead of just planning them.",
+    "I work with React, Next.js and TypeScript, and I'd rather ship something useful than something clever.",
+    "Right now I'm building a webhook delivery service and a subscription reminder app, both open source.",
+  ],
   navigation: [
     { label: "About", href: "/#about" },
     { label: "Stack", href: "/#stack" },
@@ -28,16 +47,22 @@ export const siteConfig = {
     "Design Systems",
   ],
   stack: [
-    "React",
-    "Cursor",
-    "Claude",
-    "ChatGPT",
-    "Figma",
-    "TypeScript",
-    "Git",
-    "JavaScript",
-    "Python",
-    "Next.js",
+    {
+      group: "Languages",
+      items: ["TypeScript", "JavaScript", "Python"],
+    },
+    {
+      group: "Frontend",
+      items: ["React", "Next.js"],
+    },
+    {
+      group: "Tools",
+      items: ["Git", "Figma"],
+    },
+    {
+      group: "AI",
+      items: ["Claude", "Cursor", "ChatGPT"],
+    },
   ],
   projects: [
     {
