@@ -33,27 +33,34 @@ export function ThemeToggle() {
     audioContextRef.current = context;
 
     const startAt = context.currentTime;
-    const masterGain = context.createGain();
-    masterGain.gain.setValueAtTime(0.0001, startAt);
-    masterGain.gain.exponentialRampToValueAtTime(0.08, startAt + 0.01);
-    masterGain.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.12);
-    masterGain.connect(context.destination);
+    const duration = 0.045;
 
-    const toneA = context.createOscillator();
-    toneA.type = "triangle";
-    toneA.frequency.setValueAtTime(740, startAt);
-    toneA.frequency.exponentialRampToValueAtTime(620, startAt + 0.12);
-    toneA.connect(masterGain);
-    toneA.start(startAt);
-    toneA.stop(startAt + 0.12);
+    const bufferSize = Math.ceil(context.sampleRate * duration);
+    const noiseBuffer = context.createBuffer(1, bufferSize, context.sampleRate);
+    const noiseData = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      noiseData[i] = Math.random() * 2 - 1;
+    }
 
-    const toneB = context.createOscillator();
-    toneB.type = "sine";
-    toneB.frequency.setValueAtTime(1180, startAt + 0.02);
-    toneB.frequency.exponentialRampToValueAtTime(960, startAt + 0.12);
-    toneB.connect(masterGain);
-    toneB.start(startAt + 0.02);
-    toneB.stop(startAt + 0.1);
+    const noiseSource = context.createBufferSource();
+    noiseSource.buffer = noiseBuffer;
+
+    const bandpass = context.createBiquadFilter();
+    bandpass.type = "bandpass";
+    bandpass.frequency.setValueAtTime(2000, startAt);
+    bandpass.Q.setValueAtTime(7, startAt);
+
+    const gain = context.createGain();
+    gain.gain.setValueAtTime(0.0001, startAt);
+    gain.gain.exponentialRampToValueAtTime(0.18, startAt + 0.003);
+    gain.gain.exponentialRampToValueAtTime(0.0001, startAt + duration);
+
+    noiseSource.connect(bandpass);
+    bandpass.connect(gain);
+    gain.connect(context.destination);
+
+    noiseSource.start(startAt);
+    noiseSource.stop(startAt + duration);
   }
 
   if (!mounted) {
