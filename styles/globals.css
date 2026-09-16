@@ -32,6 +32,7 @@
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-ibm-plex-mono);
   --font-display: var(--font-manrope);
+  --font-handwritten: var(--font-homemade-apple);
 
   /* Type scale — six sizes, no others permitted */
   --text-display: 1.75rem;

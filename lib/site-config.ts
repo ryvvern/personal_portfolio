@@ -19,9 +19,9 @@ export const siteConfig = {
     ],
   },
   aboutBullets: [
-    "I'm transitioning into software engineering from an infrastructure QC role, and I've been shipping projects to get there rather than waiting for permission.",
-    "I work mainly with React, Next.js and TypeScript, and I care more about whether something is useful than whether it's clever.",
-    "Currently building a webhook delivery service and a subscription reminder app, both open source.",
+    "I am Ayush, a software developer who builds things instead of just planning them.",
+    "I work with React, Next.js and TypeScript, and I'd rather ship something useful than something clever.",
+    "Right now I'm building a webhook delivery service and a subscription reminder app, both open source.",
   ],
   navigation: [
     { label: "About", href: "/#about" },

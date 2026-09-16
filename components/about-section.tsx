@@ -15,7 +15,7 @@ import {
   Twitter,
 } from "lucide-react";
 
-import coverImage from "@/app/cover_photo.jpg";
+import coverImage from "@/app/NEW.png";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/lib/button-styles";
 import { siteConfig } from "@/lib/site-config";
@@ -34,6 +34,21 @@ const socialIcons = {
   LinkedIn: Linkedin,
   Twitter: Twitter,
 };
+
+function FullBleedRule() {
+  return (
+    <div
+      className="border-border"
+      style={{
+        width: "100vw",
+        position: "relative",
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderTopWidth: "1px",
+      }}
+    />
+  );
+}
 
 function FullBleedHatchedBand() {
   return (
@@ -86,7 +101,7 @@ function Greeting() {
   }, []);
 
   return (
-    <h2 className="text-heading font-semibold text-foreground">
+    <h2 className="font-handwritten text-display text-foreground">
       {greeting ?? "Hello"}
     </h2>
   );
@@ -94,29 +109,38 @@ function Greeting() {
 
 export function AboutSection() {
   return (
-    <section
-      id="about"
-      className="container-shell"
-      style={{ overflowX: "hidden" }}
-    >
+    <section id="about" className="container-shell">
       <div
         className="relative h-[320px]"
         style={{ marginInline: "-1.5rem" }}
       >
         <Image src={coverImage} alt="" fill className="object-cover" priority />
-        <div className="absolute bottom-0 left-6 size-[116px] translate-y-1/2 rounded-full bg-foreground ring-4 ring-background" />
+        <div
+          className="absolute bottom-0 left-6 size-[136px] rounded-full bg-foreground ring-4 ring-background"
+          style={{ transform: "translateY(60px)" }}
+        />
       </div>
 
-      <div className="relative" style={{ marginTop: "20px", minHeight: "58px" }}>
+      <div className="relative flex flex-col justify-center" style={{ minHeight: "68px" }}>
         <div
           className="absolute inset-y-0 border-border"
-          style={{ left: "calc(116px + 0.5rem)", borderLeftWidth: "1px" }}
+          style={{ left: "calc(136px + 2rem)", borderLeftWidth: "1px" }}
         />
-        <div style={{ paddingLeft: "calc(116px + 1.5rem)" }}>
-          <h1 className="text-section font-semibold tracking-[-0.055em] text-balance">
-            Ayush Thakur
+        <div style={{ paddingLeft: "calc(136px + 3rem)" }}>
+          <h1 className="font-mono text-section font-semibold tracking-[-0.03em] text-balance">
+            ayush_thakur
           </h1>
-          <p className="mt-1 font-mono text-body text-muted-foreground">
+        </div>
+        <div
+          className="border-border"
+          style={{
+            marginLeft: "calc(136px + 2rem)",
+            marginRight: "-1.5rem",
+            borderTopWidth: "1px",
+          }}
+        />
+        <div style={{ paddingLeft: "calc(136px + 3rem)" }}>
+          <p className="mt-1 font-mono text-label text-muted-foreground">
             {siteConfig.tagline}
           </p>
         </div>
@@ -181,7 +205,7 @@ export function AboutSection() {
           })}
         </div>
       </div>
-      <div className="border-t border-border" />
+      <FullBleedRule />
 
       <div className="flex flex-wrap gap-2 py-4">
         {siteConfig.socials.map((item) => {
@@ -200,11 +224,15 @@ export function AboutSection() {
           );
         })}
       </div>
-      <div className="border-t border-border" />
+
+      <FullBleedHatchedBand />
+      <div className="py-4">
+        <Greeting />
+      </div>
+      <FullBleedRule />
 
       <div className="mt-8">
-        <Greeting />
-        <ul className="mt-4 flex flex-col gap-3 text-body">
+        <ul className="flex flex-col gap-3 text-body">
           {siteConfig.aboutBullets.map((bullet) => (
             <li key={bullet} className="flex gap-3">
               <span className="text-muted-foreground">—</span>
