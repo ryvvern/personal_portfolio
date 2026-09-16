@@ -45,11 +45,7 @@ export default async function BlogIndexPage() {
 
   return (
     <main className="container-shell section-space pt-32">
-      <SectionHeading
-        eyebrow="Writing"
-        title="Field notes on building interfaces that feel intentional."
-        description="Short essays on motion systems, frontend architecture, and the small details that make software feel crafted."
-      />
+      <SectionHeading title="Writing" count={posts.length} />
       <div className="mt-12 grid gap-6">
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} />
